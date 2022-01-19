@@ -104,7 +104,7 @@
             self.reset_game()
             self.running = True
             while (self.running):
-                clock = pygame.time.Clock()
+
                 self.screen.fill((0, 0, 0), (50, 250, 650, 50))
                 pygame.draw.rect(self.screen, self.HEAD_C, (50, 250, 650, 50), 2)
                 # Обновление текста пользовательского ввода
@@ -150,7 +150,7 @@
 
                 pygame.display.update()
 
-            clock.tick(60)
+
 
         def reset_game(self):
 

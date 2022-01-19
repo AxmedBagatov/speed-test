@@ -7,6 +7,7 @@
     ###### размер окна 750 x 500
     import Butttton
 
+
     class Game:
 
         def __init__(self):
@@ -44,20 +45,20 @@
         def draw_text(self, screen, msg, y, fsize, color):
             font = pygame.font.Font(None, fsize)
             text = font.render(msg, 1, color)
-            text_rect = text.get_rect(center=(self.w / 2, y)) #\\\\\\\ по центру
+            text_rect = text.get_rect(center=(self.w / 2, y))  # \\\\\\\ по центру
             screen.blit(text, text_rect)
             pygame.display.update()
             # screen.blit(text, (x, y))   // свои коор
 
         def get_sentence(self):
-            f = open('sentences.txt',encoding='utf-8').read()
+            f = open('sentences.txt', encoding='utf-8').read()
             sentences = f.split('\n')
             sentence = random.choice(sentences)
             return sentence
 
         def get_sentence_eng(self):
-            f = open('sentences_eng.txt').read()
-            sentences = f.split('\n')
+            q = open('sentences_eng.txt').read()
+            sentences = q.split('\n')
             sentence = random.choice(sentences)
             return sentence
 
@@ -77,7 +78,7 @@
                 self.accuracy = count / len(self.word) * 100
 
                 # Расчет количества слов в минуту
-                self.wpm = len(self.input_text) * 60 / ( self.total_time)
+                self.wpm = len(self.input_text) * 60 / (self.total_time)
                 self.end = True
                 print(self.total_time)
                 self.results = 'Время:' + str(round(self.total_time)) + " сек   Точность:" + str(
@@ -147,8 +148,6 @@
                                 except:
                                     pass
 
-
-
                 pygame.display.update()
 
             clock.tick(60)
@@ -211,11 +210,11 @@
                         self.gamemenu = False
                         sys.exit()
 
-                self.draw_text(self.screen, 'Настройки', 350 , 30, (0, 130, 40))
+                self.draw_text(self.screen, 'Настройки', 350, 30, (0, 130, 40))
 
                 pygame.display.update()
                 button1 = Butttton.Button(self.screen, 300, 200)
-                button1.draw(self.screen, 250, 20, 'Старт Игры', self.run , 30)
+                button1.draw(self.screen, 250, 20, 'Старт Игры', self.run, 30)
 
                 self.START = pygame.image.load('START.jpg')
                 self.START = pygame.transform.scale(self.START, (300, 200))
@@ -223,8 +222,7 @@
 
                 pygame.display.update()
                 button2 = Butttton.Button(self.screen, 150, 50)
-                button2.draw(self.screen, 50, 300, '', self.musicON , 30)
-
+                button2.draw(self.screen, 50, 300, '', self.musicON, 30)
 
                 self.SoundImageOn = pygame.image.load('Soundimage.jpg')
                 self.SoundImageOn = pygame.transform.scale(self.SoundImageOn, (150, 50))
@@ -232,17 +230,15 @@
 
                 pygame.display.update()
                 button3 = Butttton.Button(self.screen, 150, 50)
-                button3.draw(self.screen, 500, 300, '', self.musicOFF , 0)
+                button3.draw(self.screen, 500, 300, '', self.musicOFF, 0)
 
                 self.NOSoundImageOn = pygame.image.load('NOSoundimage.jpg')
                 self.NOSoundImageOn = pygame.transform.scale(self.NOSoundImageOn, (150, 50))
                 self.screen.blit(self.NOSoundImageOn, (500, 300))
 
-
                 pygame.display.update()
                 button4 = Butttton.Button(self.screen, 150, 50)
                 button4.draw(self.screen, 50, 400, '', self.rustext, 30)
-
 
                 button5 = Butttton.Button(self.screen, 150, 50)
                 button5.draw(self.screen, 500, 400, '', self.engtext, 30)
@@ -254,8 +250,6 @@
                 self.ENG = pygame.image.load('ENG.jpg')
                 self.ENG = pygame.transform.scale(self.ENG, (150, 50))
                 self.screen.blit(self.ENG, (500, 400))
-
-
 
 
     Game().gamemenu()

@@ -1,12 +1,13 @@
-import pygame
+
+    import pygame
 
 
-class Button:
-    def __init__(self, screen, width, height):
-        self.width = width
-        self.height = height
-        self.pass_color = (100, 100, 100)
-        self.active_color = (25, 25, 25)
+    class Button:
+        def __init__(self, screen, width, height):
+            self.width = width
+            self.height = height
+            self.pass_color = (100, 100, 100)
+            self.active_color = (25, 25, 25)
 
     def print_text(self, message, screen, x, y, font_color=(0, 0, 0), font_type='ComicSansMS.ttf', font_size=30):
         font_type = pygame.font.Font(font_type, font_size)

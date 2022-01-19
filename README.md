@@ -32,8 +32,6 @@
             self.RESULT_C = (0, 0, 205)
 
             pygame.init()
-            self.open_img = pygame.image.load('type-speed-open.png')
-            self.open_img = pygame.transform.scale(self.open_img, (self.w, self.h))
 
             Icon = pygame.image.load('icon_game.png')
             pygame.display.set_icon(Icon)
@@ -261,3 +259,5 @@
 
 
     Game().gamemenu()
+
+

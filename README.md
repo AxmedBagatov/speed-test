@@ -94,6 +94,8 @@
                 res2 = self.total_time * 5
                 res3 = self.wpm
                 self.res4 = res1 + res2 + res3
+                if self.accuracy == 0:
+                    self.res4 = 0
                 self.records = ' Ваш счет: ' + str(round(self.res4))
                 print(self.results)
                 print(int(self.res4))
